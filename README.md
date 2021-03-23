@@ -1,1 +1,2 @@
-See the [Operator Helm Chart](/Documentation/helm-operator.md) documentation.
+## Deployment Steps and Commands used
+# 

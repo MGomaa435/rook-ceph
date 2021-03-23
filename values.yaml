@@ -54,13 +54,13 @@ pspEnable: true
 ## Settings for whether to disable the drivers or other daemons if they are not
 ## needed
 csi:
-  enableRbdDriver: true
+  enableRbdDriver: false
   enableCephfsDriver: true
   enableGrpcMetrics: false
   # set to false to disable deployment of snapshotter container in CephFS provisioner pod.
   enableCephfsSnapshotter: true
   # set to false to disable deployment of snapshotter container in RBD provisioner pod.
-  enableRBDSnapshotter: true
+  enableRBDSnapshotter: false
   # (Optional) set user created priorityclassName for csi plugin pods.
   # pluginPriorityClassName: system-node-critical
 
