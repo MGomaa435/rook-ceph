@@ -5,7 +5,7 @@
 image:
   prefix: rook
   repository: rook/ceph
-  tag: VERSION
+  tag: v1.5.8
   pullPolicy: IfNotPresent
 
 crds:
