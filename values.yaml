@@ -23,7 +23,7 @@ resources:
     memory: 256Mi
 
 nodeSelector:
-  rook-ceph-node: true
+  rook-ceph-node: "true"
 # Constraint rook-ceph-operator Deployment to nodes with label `disktype: ssd`.
 # For more info, see https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#nodeselector
 #  disktype: ssd
