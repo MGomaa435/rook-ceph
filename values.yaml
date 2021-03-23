@@ -341,7 +341,7 @@ hostpathRequiresPrivileged: false
 disableDeviceHotplug: false
 
 # Blacklist certain disks according to the regex provided.
-discoverDaemonUdev: "sd[^c]"
+discoverDaemonUdev:
 
 # imagePullSecrets option allow to pull docker images from private docker registry. Option will be passed to all service accounts.
 # imagePullSecrets:
