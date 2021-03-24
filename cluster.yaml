@@ -53,7 +53,7 @@ spec:
     # When higher availability of the mgr is needed, increase the count to 2.
     # In that case, one mgr will be active and one in standby. When Ceph updates which
     # mgr is active, Rook will update the mgr services to match the active mgr.
-    count: 2
+    count: 1
     modules:
       # Several modules should not need to be included in this list. The "dashboard" and "monitoring" modules
       # are already enabled by other settings in the cluster CR.
@@ -67,7 +67,7 @@ spec:
     # serve the dashboard at the given port.
     # port: 8443
     # serve the dashboard using SSL
-    ssl: true
+    #ssl: true
   # enable prometheus alerting for cluster
   monitoring:
     # requires Prometheus to be pre-installed
@@ -198,7 +198,7 @@ spec:
 #    mgr: rook-ceph-mgr-priority-class
   storage: # cluster level storage configuration and selection
     useAllNodes: false
-    useAllDevices: false
+    useAllDevices: true
     #deviceFilter:
     config:
 
@@ -212,11 +212,12 @@ spec:
 # nodes below will be used as storage resources.  Each node's 'name' field should match their 'kubernetes.io/hostname' label.
     nodes:
     - name: "worker01"
-      devices: # specific devices to use for storage can be specified for each node
-      - name: "sdc"
+      #devices: # specific devices to use for storage can be specified for each node
+      #- name: "/dev/sdc"
+    - name: "worker03"
     - name: "worker02"
-      devices: # specific devices to use for storage can be specified for each node
-      - name: "sdc"
+      #devices: # specific devices to use for storage can be specified for each node
+      #- name: "/dev/sdc"
 #    nodes:
 #    - name: "172.17.4.201"
 #      devices: # specific devices to use for storage can be specified for each node

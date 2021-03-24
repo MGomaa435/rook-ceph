@@ -27,10 +27,10 @@ spec:
   dataPools:
     - failureDomain: host
       replicated:
-        size: 3
+        size: 1
         # Disallow setting pool with replica 1, this could lead to data loss without recovery.
         # Make sure you're *ABSOLUTELY CERTAIN* that is what you want
-        requireSafeReplicaSize: true
+        requireSafeReplicaSize: false
       parameters:
         # Inline compression mode for the data pool
         # Further reference: https://docs.ceph.com/docs/nautilus/rados/configuration/bluestore-config-ref/#inline-compression
@@ -44,7 +44,7 @@ spec:
   # The metadata service (mds) configuration
   metadataServer:
     # The number of active MDS instances
-    activeCount: 1
+    activeCount: 3
     # Whether each active MDS instance will have an active standby with a warm metadata cache for faster failover.
     # If false, standbys will be available, but will not have a warm cache.
     activeStandby: true
