@@ -12,7 +12,7 @@ apiVersion: ceph.rook.io/v1
 kind: CephCluster
 metadata:
   name: rook-ceph
-  namespace: rook-ceph # namespace:cluster
+  namespace: ceph # namespace:cluster
 spec:
   cephVersion:
     # The container image used to launch the Ceph daemon pods (mon, mgr, osd, mds, rgw).
@@ -77,7 +77,7 @@ spec:
     # If you have a single rook-ceph cluster, set the rulesNamespace to the same namespace as the cluster or keep it empty.
     # If you have multiple rook-ceph clusters in the same k8s cluster, choose the same namespace (ideally, namespace with prometheus
     # deployed) to set rulesNamespace for all the clusters. Otherwise, you will get duplicate alerts with multiple alert definitions.
-    rulesNamespace: rook-ceph
+    rulesNamespace: ceph
   network:
     # enable host networking
     #provider: host
