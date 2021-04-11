@@ -9,3 +9,4 @@
 # Common Issues and Handling
 - OSD is down while pod is running. most probably it is a network issue to be solved in next heartbeat or restart the OSD POD.
 - ceph status is reporting warning for mon slow ops. this maybe due to time synchronization, could be solved by ensuring that ntpd service is running across all the nodes. use service ntpd start
+- when create a new pool and define storageclass, pv is not created and reporting that pool layout is not valid. to solve this issue, you have to add the pool as data pool to filesystem through ceph fs add_data_pool <fs name> <pool name>
